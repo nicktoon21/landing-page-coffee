@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    color: var(--text-color);
+}
+
+:root {
+    --backgrond: #000;
+    --text-color: #fff;
+    --button: #8257e5;
+    --border: #29292e;
+    --border-menu-mobile: #a8a8b3;
+    --text-color-menu-mobile: #e1e1e6;
+}
+
+@media (min-width: 768px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: url(../assets/blur-2.png) no-repeat top right,
+            url(../assets/blur-1.png) no-repeat bottom left var(--backgrond);
+    }
+    .desktop {
+        width: 100%;
+        margin-top: 3.15rem;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .desktop a {
+        border: 1px solid var(--button);
+        border-radius: 6px;
+        padding: 11px 38px;
+        font-family: "Manrope", sans-serif;
+        font-style: normal;
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        background-color: transparent;
+    }
+    .desktop ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        gap: 2rem;
+        background-color: transparent;
+
+        font-family: "Manrope", sans-serif;
+        font-style: normal;
+        font-size: 0.875rem;
+    }
+
+    .mobile {
+        display: none;
+    }
+    .menu-mobile {
+        display: none;
+    }
+
+    .container {
+        margin-top: 3.15rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container .title {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+    .container .title h1,
+    h2 {
+        font-family: "Manrope", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 6rem;
+        line-height: 6.8rem;
+    }
+
+    .container .title h2 {
+        color: var(--backgrond);
+        text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button),
+            1px 1px 0 var(--button);
+    }
+    .container .title p {
+        display: none;
+    }
+    .container .title a {
+        display: none;
+    }
+    section {
+        margin-top: auto;
+    }
+
+    section img {
+        width: auto;
+        height: 28rem;
+    }
+}
+@media (max-width: 768px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: url(../assets/blur-mobile.png) no-repeat var(--backgrond);
+        background-size: cover;
+        overflow-x: hidden;
+    }
+    .desktop {
+        display: none;
+    }
+    .menu-mobile {
+        display: none;
+        transform: translateX(100%);
+        transition: all 0.8s;
+    }
+
+    .menu-mobile.isOpen {
+        display: block;
+        transform: translateX(0);
+        transition: all 0.8s;
+    }
+    .menu-mobile ul {
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+        background-color: var(--backgrond);
+        list-style: none;
+    }
+    .menu-mobile ul li {
+        width: 100vw;
+        padding: 1.125rem 2rem;
+        font-size: 1.125rem;
+        font-family: "Manrope", sans-serif;
+        border-bottom: 1px solid var(--border-menu-mobile);
+    }
+
+    .mobile {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 2rem;
+        border-bottom: 1px solid var(--border-menu-mobile);
+    }
+
+    .mobile button {
+        background-color: var(--background);
+        transition: opacity 800ms;
+        cursor: pointer;
+    }
+    .container.isOpen {
+        display: none;
+    }
+
+    .container .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 4rem 2rem;
+    }
+
+    .container .title h1,
+    h2 {
+        font-family: "Manrope", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 3.125rem;
+        line-height: 4.25rem;
+    }
+    .container .title h2 {
+        color: var(--backgrond);
+        text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button),
+            1px 1px 0 var(--button);
+    }
+
+    .container .title p {
+        display: block;
+        text-align: center;
+        font-family: "Manrope", sans-serif;
+        font-size: 1.9rem;
+        font-weight: 600;
+    }
+    .container .title a {
+        border: 1px solid var(--button);
+        border-radius: 6px;
+        padding: 0.68rem 2rem;
+        margin: 7rem 0px;
+        font-family: "Manrope", sans-serif;
+        font-style: normal;
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    section img {
+        width: 26rem;
+        height: auto;
+    }
+}
+@media (max-width: 468px) {
+    html,
+    body {
+        font-size: 87%;
+    }
+}
+
+@media (max-width: 375px) {
+    html,
+    body {
+        font-size: 72%;
+    }
+}
